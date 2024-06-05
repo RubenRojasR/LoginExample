@@ -1,7 +1,7 @@
-#LoginExample
+# LoginExample
 This is an example register and Login API using Entity Framework Core and Identiy Framework Core
 
-##Prerrequisites
+## Prerrequisites
   - Net 8
 ## Migrations
 Using Package Manager Console
