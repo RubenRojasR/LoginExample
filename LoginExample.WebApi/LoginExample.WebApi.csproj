@@ -17,6 +17,7 @@
   <ItemGroup>
     <ProjectReference Include="..\LoginExample.Dal.EFC\LoginExample.Dal.EFC.csproj" />
     <ProjectReference Include="..\LoginExample.Models\LoginExample.Models.csproj" />
+    <ProjectReference Include="..\LoginExample.Services\LoginExample.Services.csproj" />
   </ItemGroup>
 
 </Project>

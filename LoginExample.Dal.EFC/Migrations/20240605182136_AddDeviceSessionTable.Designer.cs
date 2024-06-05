@@ -4,6 +4,7 @@ using LoginExample.Dal.EFC;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LoginExample.Dal.EFC.Migrations
 {
     [DbContext(typeof(ApplicationDbContextEFC))]
-    partial class ApplicationDbContextEFCModelSnapshot : ModelSnapshot
+    [Migration("20240605182136_AddDeviceSessionTable")]
+    partial class AddDeviceSessionTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

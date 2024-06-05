@@ -1,4 +1,5 @@
 using LoginExample.Dal.EFC;
+using LoginExample.Services.DeviceSessions;
 using LoginExample.WebApi.Data;
 using LoginExample.WebApi.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -13,12 +14,18 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
+//Add DbContext
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-//token
+//Add token
 builder.Services.AddScoped<JwtService>();
+
+//Add Services for DeviceSessions
+builder.Services.AddScoped<ApplicationDbContextEFC>();
+builder.Services.AddScoped<IDeviceSessionRepository, DeviceSessionRepository>();
+builder.Services.AddScoped<DeviceSessionService>();
 
 builder.Services.AddIdentity<IdentityUser, IdentityRole>(
     options =>

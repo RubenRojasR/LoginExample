@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\LoginExample.Helpers\LoginExample.Helpers.csproj" />
+    <ProjectReference Include="..\LoginExample.Models\LoginExample.Models.csproj" />
   </ItemGroup>
 
 </Project>
